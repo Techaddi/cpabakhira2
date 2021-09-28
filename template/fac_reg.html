@@ -1,0 +1,84 @@
+<style>
+
+.note
+{
+    text-align: center;
+    height: 80px;
+    background: -webkit-linear-gradient(left, #0072ff, #8811c5);
+    color: #fff;
+    font-weight: bold;
+    line-height: 80px;
+}
+.form-content
+{
+    padding: 5%;
+    border: 1px solid #ced4da;
+    margin-bottom: 2%;
+}
+.form-control{
+    border-radius:1.5rem;
+}
+.btnSubmit
+{
+    border:none;
+    border-radius:1.5rem;
+    padding: 1%;
+    width: 20%;
+    cursor: pointer;
+    background: #0062cc;
+    color: #fff;
+}
+</style>
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container register-form">
+    {% for message in messages %}
+                                         <div class="alert alert-unsuccess">
+                                         <strong> Alert !</strong> {{message}}
+                                          </div>
+                                          {% endfor %}
+            <div class="form">
+                <div class="note">
+                    <p>Registration form for Faculties.</p>
+                </div>
+               <form action="fac_reg" method="POST" class="form-control">
+                   {% csrf_token %}
+                <div class="form-content">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Your Name *" value="" name="name" id="name"/>
+                            </div>
+                            <div class="form-group">
+                                <input type="number" class="form-control" placeholder="Phone Number*" value="" name="phone" id="phone" required/>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" placeholder="Email *" value="" name="email" id="email" required/>
+                            </div>
+                           
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="User Name *" value="" name="username" id="username"/>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" placeholder="Your Password *" value="" name="password1" id="password1"/>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" placeholder="Confirm Password *" value="" name="password2" id="password2"/>
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="Submit" class="form-control" placeholder="Submit *" />
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        </form>

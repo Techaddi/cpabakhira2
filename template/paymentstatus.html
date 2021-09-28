@@ -1,0 +1,23 @@
+
+<div class="container">
+    <h2>Order Details</h2>
+    {{response}}
+    <div class="col my-4">
+
+        <h2>Payment status regarding your order Id: {{response.ORDERID}}</h2>
+        {% if response.RESPCODE == '01' %}
+        <h3>Congratulations!</h3>
+       <strong>ORDER SUCCESS</strong> 
+       <br><br><br>
+       <h2> please take screenshot or print the page..</h2>
+        {% else %}
+        <h3>We are sorry...</h3>
+        <strong>ORDER FAILURE</strong>
+        {% endif%}
+        <br>
+        
+    </div>
+
+</div>
+
+
